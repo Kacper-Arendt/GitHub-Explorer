@@ -1,9 +1,7 @@
 const App = () => (
-    <>
-        <div>
-            Zuzia pierdziucha
-        </div>
-    </>
+	<>
+		<div>x</div>
+	</>
 );
 
-export default App
+export default App;
