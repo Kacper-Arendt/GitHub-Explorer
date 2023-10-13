@@ -8,6 +8,9 @@ import { router } from 'src/routes';
 // REDUX
 import { persistor, store } from 'src/redux/store';
 
+// STYLES
+import 'src/app.scss';
+
 const App = () => (
 	<Provider store={store}>
 		<PersistGate loading={null} persistor={persistor}>

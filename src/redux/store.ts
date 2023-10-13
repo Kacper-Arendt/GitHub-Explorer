@@ -9,6 +9,9 @@ import { reducer } from 'src/redux/slices/reducer';
 // SAGA
 import rootSaga from 'src/redux/sagas/rootSaga';
 
+// UTILS
+import { envs } from 'src/config';
+
 const sagaMiddleware = createSagaMiddleware();
 
 const reducers = combineReducers({
@@ -26,6 +29,7 @@ const persistedReducer = persistReducer(persistConfig, reducers);
 export const store = configureStore({
 	reducer: persistedReducer,
 	middleware: [sagaMiddleware],
+	devTools: envs.dev,
 });
 
 sagaMiddleware.run(rootSaga);
