@@ -1,6 +1,8 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
 // REDUX
+import { useAppDispatch, useAppSelector } from 'src/redux/hooks';
+import { increment, selectCounter } from 'src/redux/slices/example/example';
 
 // HOOKS
 
@@ -13,5 +15,19 @@ import { ErrorBoundary } from 'react-error-boundary';
 // UTILS
 
 export const Search = () => {
-	return <ErrorBoundary FallbackComponent={() => null}>Search</ErrorBoundary>;
+	const dispatch = useAppDispatch();
+	const { value } = useAppSelector(selectCounter);
+
+	return (
+		<ErrorBoundary FallbackComponent={() => null}>
+			<p>Search</p>
+
+			<div>
+				<p>Count: {value}</p>
+				<button type="button" onClick={() => dispatch(increment())}>
+					Click
+				</button>
+			</div>
+		</ErrorBoundary>
+	);
 };

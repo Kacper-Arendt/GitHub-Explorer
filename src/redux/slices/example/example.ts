@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit';
 import type { PayloadAction } from '@reduxjs/toolkit';
 
 // MODELS
+import { RootState } from 'src/redux/store';
 import { CounterState } from 'src/redux/slices/example/models';
 
 const initialState: CounterState = {
@@ -25,5 +26,7 @@ export const counterSlice = createSlice({
 });
 
 export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+
+export const selectCounter = (state: RootState) => state.counter;
 
 export default counterSlice.reducer;
