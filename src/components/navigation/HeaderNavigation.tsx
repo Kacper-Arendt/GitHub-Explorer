@@ -2,13 +2,8 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { NavLink } from 'react-router-dom';
 import clsx from 'clsx';
 
-// REDUX
-
-// HOOKS
-
-// MODELS
-
 // COMPONENTS
+import { FallbackError } from 'src/components/errors';
 
 // STYLES
 import 'src/components/navigation/styles.scss';
@@ -17,7 +12,7 @@ import 'src/components/navigation/styles.scss';
 import { routes } from 'src/routes';
 
 export const HeaderNavigation = () => (
-	<ErrorBoundary FallbackComponent={() => null}>
+	<ErrorBoundary FallbackComponent={FallbackError}>
 		<div className="header-navigation">
 			<nav className="header-navigation__nav">
 				{Object.values(routes).map(({ name, path }) => (

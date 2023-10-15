@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom';
 
 // STYLES
 import 'src/components/errors/styles.scss';
+
 // UTILS
 import { routes } from 'src/routes';
 

@@ -16,9 +16,20 @@
 		color: $grey10;
 		font-size: $fz-medium;
 	}
-	
-	&__go-back{
+
+	&__go-back {
 		font-size: $fz-large;
 		color: $grey10;
+	}
+}
+
+.fallback-error {
+	@include flex-center;
+	gap: 1.5rem;
+	padding: 0.5rem;
+	text-align: center;
+
+	&__title {
+		color: $danger;
 	}
 }
