@@ -10,16 +10,15 @@ import { Search } from 'src/features/github';
 export const routes = {
 	userProjects: {
 		path: '/',
-		// TODO ADD I18N
-		name: 'User Projects',
+		name: 'routes.userProjects',
 	},
 	factorial: {
 		path: '/factorial',
-		name: 'Factorial',
+		name: 'routes.factorial',
 	},
 	info: {
 		path: '/info',
-		name: 'Info',
+		name: 'routes.info',
 	},
 };
 

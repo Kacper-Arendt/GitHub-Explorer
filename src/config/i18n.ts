@@ -10,22 +10,16 @@ export const fallbackLng = 'en';
 export const supportedI18nLangs = [fallbackLng, 'pl'] as const;
 export type SupportedLangsType = (typeof supportedI18nLangs)[number];
 
-export const initializeI18n = () =>
+export const initializeI18n = () => {
 	i18n
 		.use(detector)
 		.use(initReactI18next)
 		.init({
 			resources: {
-				en: {
-					translation: en,
-				},
-				pl: {
-					translation: pl,
-				},
+				en: { translation: { ...en } },
+				pl: { translation: { ...pl } },
 			},
 			fallbackLng,
-
-			interpolation: {
-				escapeValue: false,
-			},
+			debug: true,
 		});
+};

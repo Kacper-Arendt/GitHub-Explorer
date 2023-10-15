@@ -1,3 +1,4 @@
+import i18n from 'i18next';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // REDUX
@@ -18,9 +19,6 @@ import { FallbackError } from 'src/components/errors';
 export const Search = () => {
 	const dispatch = useAppDispatch();
 	const { value } = useAppSelector(selectCounter);
-	const throwError = () => {
-		throw new Error('Hulk smash!');
-	};
 
 	return (
 		<ErrorBoundary FallbackComponent={FallbackError}>
@@ -32,8 +30,11 @@ export const Search = () => {
 					Click
 				</button>
 
-				<button type="button" onClick={throwError}>
-					Click to Throw Error
+				<button type="button" onClick={() => i18n.changeLanguage('pl')}>
+					pl
+				</button>
+				<button type="button" onClick={() => i18n.changeLanguage('en')}>
+					en
 				</button>
 			</div>
 		</ErrorBoundary>

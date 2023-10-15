@@ -11,6 +11,11 @@ import { persistor, store } from 'src/redux/store';
 // STYLES
 import 'src/app.scss';
 
+// CONFIG
+import { initializeI18n } from 'src/config/i18n';
+
+initializeI18n();
+
 const App = () => (
 	<Provider store={store}>
 		<PersistGate loading={null} persistor={persistor}>
