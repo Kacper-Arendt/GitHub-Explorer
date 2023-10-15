@@ -3,11 +3,7 @@
 .app-layout {
 	@include flex-column;
 	width: 100%;
-
-	min-height: 100dvh;
-	@supports not (min-height: 100dvh) {
-		min-height: 100vh;
-	}
+	height: 100%;
 
 	&__header {
 		width: 100%;
