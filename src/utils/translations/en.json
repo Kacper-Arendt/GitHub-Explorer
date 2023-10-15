@@ -1,0 +1,15 @@
+{
+	"general": {
+		"goBackToHomePage": "Go back to the home page"
+	},
+	"errors": {
+		"fallbackErrorMessage": "Oops! Something went wrong",
+		"pageNotFound": "Page Not Found",
+		"pageNotFound-desc": "Sorry, the page you are looking for does not exist."
+	},
+  "routes": {
+    "userProjects": "User Projects",
+    "factorial": "Factorial",
+    "info": "Info"
+  }
+}
