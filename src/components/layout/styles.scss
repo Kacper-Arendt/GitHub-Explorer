@@ -1,0 +1,22 @@
+@import 'src/styles/mixins';
+
+.app-layout {
+	@include flex-column;
+	width: 100%;
+
+	min-height: 100dvh;
+	@supports not (min-height: 100dvh) {
+		min-height: 100vh;
+	}
+
+	&__header {
+		width: 100%;
+		padding: 1rem 0.5rem;
+		background-color: #555151;
+	}
+
+	&__main {
+		padding: 1rem;
+		flex: 1;
+	}
+}

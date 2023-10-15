@@ -1,0 +1,25 @@
+@use 'sass:color';
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.header-navigation {
+	width: 100%;
+
+	&__nav {
+		@include flex-center-vert;
+		gap: 0.75rem;
+		
+		&__item {
+			color: $grey10;
+			transition: color 0.3s;
+
+			&--active {
+				color: $primary;
+			}
+
+			&:hover {
+				color: darken($primary, 30%);
+			}
+		}
+	}
+}

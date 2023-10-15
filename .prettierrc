@@ -5,7 +5,7 @@
 	"singleQuote": true,
 	"useTabs": true,
 	"tabWidth": 2,
-	"printWidth": 135,
+	"printWidth": 125,
 	"proseWrap": "always",
 	"trailingComma": "all"
 }

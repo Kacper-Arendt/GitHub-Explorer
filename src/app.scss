@@ -1,6 +1,6 @@
-@import "./Styles/variables";
+@import 'src/styles/variables';
 
-
-body{
-  background-color: $main-bg-color;
+body {
+	background-color: $main-bg-color;
+	font-family: 'Roboto', sans-serif;
 }
