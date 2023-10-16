@@ -5,6 +5,17 @@ body {
 	font-family: 'Roboto', sans-serif;
 }
 
-html, body, #root {
-	height: 100%
+html,
+body,
+#root {
+	height: 100%;
+}
+
+ul {
+	li {
+		color: white;
+	}
+	li:nth-child(even) {
+		color: $danger;
+	}
 }
