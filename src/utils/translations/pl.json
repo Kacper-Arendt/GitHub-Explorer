@@ -2,7 +2,12 @@
   "general": {
     "goBackToHomePage": "Wróć na stronę główną",
     "userNotFound": "Nie znaleziono użytkownika",
-    "noUserRepositoriesMessage": "Brak dostępnych repozytoriów użytkownika."
+    "noUserRepositoriesMessage": "Brak dostępnych repozytoriów użytkownika.",
+    "projectInfo": "Informacje o projekcie",
+    "projectName": "Nazwa Projektu",
+    "author": "Autor",
+    "infoScreenDescription": "Aplikacja składa się z trzech głównych ekranów"
+    
   },
   "errors": {
     "fallbackErrorMessage": "Ups! Coś poszło nie tak",

@@ -2,7 +2,11 @@
 	"general": {
 		"goBackToHomePage": "Go back to the home page",
 		"userNotFound": "User not found",
-		"noUserRepositoriesMessage": "No user repositories available."
+		"noUserRepositoriesMessage": "No user repositories available.",
+		"projectInfo": "Project info",
+		"projectName": "Project name",
+		"author": "Author",
+		"infoScreenDescription": "The application consists of three main screens"
 	},
 	"errors": {
 		"fallbackErrorMessage": "Oops! Something went wrong",
