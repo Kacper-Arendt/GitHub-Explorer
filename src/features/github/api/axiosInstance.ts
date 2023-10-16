@@ -10,7 +10,4 @@ export const githubApi = axios.create({
 	},
 });
 
-githubApi.interceptors.response.use(
-	(response) => response.data,
-	(error) => error,
-);
+githubApi.interceptors.response.use((response) => response.data);

@@ -1,27 +1,26 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { ErrorBoundary } from 'react-error-boundary';
 
 // HOOKS
-import { useUserProjects } from 'src/features/github/hooks/useUserProjects';
+import { useUserRepo } from 'src/features/github/api/getUserRepos';
 import { useDebounce } from 'src/utils/hooks/useDebounce';
 
 // COMPONENTS
 import { RepoListItem } from 'src/features/github/components/RepoListItem';
 import { FallbackError } from 'src/components/errors';
+import { StatusWrapper } from 'src/components/wrappers/StatusWrapper';
+import { t } from 'i18next';
 
 // STYLES
 
 // UTILS
 
 export const UserReposList = () => {
-	const { getProjects, projects } = useUserProjects();
 	const [search, setSearch] = useState('');
-
-	const searchValueDebounced = useDebounce(search, 1000);
-
-	useEffect(() => {
-		if (search.length > 2) getProjects({ username: search });
-	}, [searchValueDebounced]);
+	const searchValueDebounced = useDebounce(search, 500);
+	const { data, isError, isSuccess, isFetched, isInitialLoading } = useUserRepo({
+		params: { username: searchValueDebounced },
+	});
 
 	return (
 		<ErrorBoundary FallbackComponent={FallbackError}>
@@ -29,7 +28,12 @@ export const UserReposList = () => {
 				<div>
 					<input type="search" value={search} onChange={(e) => setSearch(e.currentTarget.value)} />
 				</div>
-				<ul>{projects?.map((el) => <RepoListItem key={el.id} {...el} />)}</ul>
+				<StatusWrapper isError={isError} isSuccess={isSuccess} isLoading={isInitialLoading}>
+					{isFetched && !data && <p>{t('general.userNotFound')}</p>}
+					{isFetched && data?.length === 0 && <p>{t('general.noUserRepositoriesMessage')}</p>}
+
+					{data && <ul>{data?.map((el) => <RepoListItem key={el.id} {...el} />)}</ul>}
+				</StatusWrapper>
 			</div>
 		</ErrorBoundary>
 	);

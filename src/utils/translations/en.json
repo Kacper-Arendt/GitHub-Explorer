@@ -1,15 +1,17 @@
 {
 	"general": {
-		"goBackToHomePage": "Go back to the home page"
+		"goBackToHomePage": "Go back to the home page",
+		"userNotFound": "User not found",
+		"noUserRepositoriesMessage": "No user repositories available."
 	},
 	"errors": {
 		"fallbackErrorMessage": "Oops! Something went wrong",
 		"pageNotFound": "Page Not Found",
 		"pageNotFound-desc": "Sorry, the page you are looking for does not exist."
 	},
-  "routes": {
-    "userProjects": "User Projects",
-    "factorial": "Factorial",
-    "info": "Info"
-  }
+	"routes": {
+		"userProjects": "User Projects",
+		"factorial": "Factorial",
+		"info": "Info"
+	}
 }
