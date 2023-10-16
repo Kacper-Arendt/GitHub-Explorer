@@ -6,6 +6,7 @@ import { NotFound } from 'src/components/errors';
 
 // ROUTES
 import { UserRepos } from 'src/features/github';
+import { Info } from 'src/features/info';
 
 export const routes = {
 	userProjects: {
@@ -37,6 +38,10 @@ export const router = createBrowserRouter([
 			{
 				index: true,
 				element: <UserRepos />,
+			},
+			{
+				path: routes.info.path,
+				element: <Info />,
 			},
 		],
 	},
