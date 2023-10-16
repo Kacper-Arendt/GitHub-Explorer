@@ -1,1 +1,1 @@
-export * from 'src/features/github/routes/Search';
+export * from 'src/features/github/routes/UserRepos';

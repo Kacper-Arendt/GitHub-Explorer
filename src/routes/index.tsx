@@ -5,7 +5,7 @@ import { AppLayout } from 'src/components/layout';
 import { NotFound } from 'src/components/errors';
 
 // ROUTES
-import { Search } from 'src/features/github';
+import { UserRepos } from 'src/features/github';
 
 export const routes = {
 	userProjects: {
@@ -36,7 +36,7 @@ export const router = createBrowserRouter([
 		children: [
 			{
 				index: true,
-				element: <Search />,
+				element: <UserRepos />,
 			},
 		],
 	},

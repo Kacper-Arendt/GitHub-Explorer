@@ -20,6 +20,6 @@ export const initializeI18n = () => {
 				pl: { translation: { ...pl } },
 			},
 			fallbackLng,
-			debug: true,
+			debug: false,
 		});
 };
