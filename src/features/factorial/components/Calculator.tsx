@@ -22,7 +22,7 @@ export const Calculator = () => {
 					<input
 						type="number"
 						value={number}
-						onChange={(e) => setNumber({ number: parseInt(e.target.value.slice(0, 3)) })}
+						onChange={({ currentTarget }) => setNumber({ number: parseInt(currentTarget.value) })}
 					/>
 					<button onClick={calculateFactorial}>Calculate Factorial</button>
 				</div>
