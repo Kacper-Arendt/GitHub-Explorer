@@ -1,3 +1,3 @@
-import counter from 'src/redux/slices/example/example';
+import factorial from 'src/redux/slices/factorial';
 
-export const reducer = { counter };
+export const reducer = { factorial };

@@ -1,39 +1,66 @@
-// REDUX
+import { useReducer } from 'react';
+import { t } from 'i18next';
 
-// HOOKS
+// REDUX
+import { useAppDispatch } from 'src/redux/hooks';
+import { factorialUpdateHistory } from 'src/redux/slices/factorial';
 
 // MODELS
+import {
+	ActionTypes,
+	ReducerInitialStateInterface,
+	RegistrationReducerAction,
+	SetErrorType,
+	SetFactorialType,
+	SetNumberType,
+} from 'src/features/factorial/models';
 
-// COMPONENTS
+const initialState: ReducerInitialStateInterface = {
+	number: 0,
+	factorial: null,
+	error: null,
+};
 
-// STYLES
-
-// UTILS
-
-import { useState } from 'react';
+const useFactorialReducer = (state: ReducerInitialStateInterface, action: RegistrationReducerAction) => {
+	switch (action.type) {
+		case ActionTypes.setNumber:
+			return { ...state, number: action.payload.number, result: null };
+		case ActionTypes.setFactorial:
+			return { ...state, factorial: action.payload.factorial, number: 0 };
+		case ActionTypes.setError:
+			return { ...state, error: action.payload.error, result: null, number: 0 };
+		default:
+			throw new Error();
+	}
+};
 
 export const useFactorial = () => {
-	const [number, setNumber] = useState('');
-	const [result, setResult] = useState<number | null>(null);
-	const [history, setHistory] = useState<{ number: number; factorial: number }[]>([]);
+	const dispatch = useAppDispatch();
+	const [state, reducerDispatch] = useReducer(useFactorialReducer, initialState);
 
-	const factorial = (n: number): number => {
+	const setNumber = (payload: SetNumberType['payload']) => reducerDispatch({ type: ActionTypes.setNumber, payload });
+
+	const setFactorial = (payload: SetFactorialType['payload']) =>
+		reducerDispatch({ type: ActionTypes.setFactorial, payload });
+
+	const setError = (payload: SetErrorType['payload']) => reducerDispatch({ type: ActionTypes.setError, payload });
+
+	const factorialHandler = (n: number): number => {
 		let p = 1;
 		for (let i = n; i > 0; i--) p *= i;
 		return p;
 	};
 
 	const calculateFactorial = () => {
-		const n = parseInt(number);
+		try {
+			const factorial = factorialHandler(state.number);
 
-		if (!isNaN(n)) {
-			const fact = factorial(n);
-
-			setResult(fact);
-			setHistory((prevState) => [...prevState, { number: n, factorial: fact }]);
-			setNumber('');
+			setFactorial({ factorial });
+			dispatch(factorialUpdateHistory({ number: state.number, factorial }));
+		} catch (e) {
+			setError({ error: t('errors.fallbackErrorMessage') });
 		}
 	};
 
-	return { calculateFactorial, number, setNumber, result, history };
+	return { state, calculateFactorial, setNumber };
 };

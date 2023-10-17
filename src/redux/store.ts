@@ -21,7 +21,7 @@ const reducers = combineReducers({
 const persistConfig = {
 	key: 'root',
 	storage,
-	whitelist: ['counter'],
+	whitelist: ['factorial'],
 };
 
 const persistedReducer = persistReducer(persistConfig, reducers);
