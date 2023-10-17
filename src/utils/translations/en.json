@@ -6,7 +6,10 @@
 		"projectInfo": "Project info",
 		"projectName": "Project name",
 		"author": "Author",
-		"infoScreenDescription": "The application consists of three main screens"
+		"infoScreenDescription": "The application consists of three main screens",
+		"calculate": "Calculate",
+		"factorialResult": "Factorial result",
+		"number": "Number"
 	},
 	"errors": {
 		"fallbackErrorMessage": "Oops! Something went wrong",

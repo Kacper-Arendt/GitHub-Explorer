@@ -6,8 +6,10 @@
     "projectInfo": "Informacje o projekcie",
     "projectName": "Nazwa Projektu",
     "author": "Autor",
-    "infoScreenDescription": "Aplikacja składa się z trzech głównych ekranów"
-    
+    "infoScreenDescription": "Aplikacja składa się z trzech głównych ekranów",
+    "calculate": "Oblicz",
+    "factorialResult": "Wynik silni",
+    "number": "Liczba"
   },
   "errors": {
     "fallbackErrorMessage": "Ups! Coś poszło nie tak",

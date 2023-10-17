@@ -1,4 +1,5 @@
 import { Control, Controller } from 'react-hook-form';
+import { ComponentProps } from 'react';
 
 // COMPONENTS
 import { Label } from 'src/components/form/components/Label';
@@ -6,14 +7,15 @@ import { Label } from 'src/components/form/components/Label';
 // STYLES
 
 interface InputInterface {
-	name: string;
-	type: 'any';
-	label?: string;
-	placeholder?: string;
-	disabled?: boolean;
 	autoFocus?: boolean;
-	control: Control | undefined;
+	control: Control<any> | undefined;
+	disabled?: boolean;
+	label?: string;
+	name: string;
+	placeholder?: string;
+	type: ComponentProps<'input'>['type'];
 }
+
 export const Input = ({ label, type, placeholder, autoFocus, disabled, name, control }: InputInterface) => (
 	<Controller
 		name={name}
@@ -25,7 +27,7 @@ export const Input = ({ label, type, placeholder, autoFocus, disabled, name, con
 					name={name}
 					required
 					ref={ref}
-					value={value}
+					value={value || ''}
 					onChange={onChange}
 					onBlur={onBlur}
 					placeholder={placeholder}

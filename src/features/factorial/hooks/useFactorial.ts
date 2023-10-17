@@ -12,23 +12,19 @@ import {
 	RegistrationReducerAction,
 	SetErrorType,
 	SetFactorialType,
-	SetNumberType,
 } from 'src/features/factorial/models';
 
 const initialState: ReducerInitialStateInterface = {
-	number: 0,
 	factorial: null,
 	error: null,
 };
 
 const useFactorialReducer = (state: ReducerInitialStateInterface, action: RegistrationReducerAction) => {
 	switch (action.type) {
-		case ActionTypes.setNumber:
-			return { ...state, number: action.payload.number, result: null };
 		case ActionTypes.setFactorial:
-			return { ...state, factorial: action.payload.factorial, number: 0 };
+			return { ...state, factorial: action.payload, error: null };
 		case ActionTypes.setError:
-			return { ...state, error: action.payload.error, result: null, number: 0 };
+			return { ...state, error: action.payload };
 		default:
 			throw new Error();
 	}
@@ -37,8 +33,6 @@ const useFactorialReducer = (state: ReducerInitialStateInterface, action: Regist
 export const useFactorial = () => {
 	const dispatch = useAppDispatch();
 	const [state, reducerDispatch] = useReducer(useFactorialReducer, initialState);
-
-	const setNumber = (payload: SetNumberType['payload']) => reducerDispatch({ type: ActionTypes.setNumber, payload });
 
 	const setFactorial = (payload: SetFactorialType['payload']) =>
 		reducerDispatch({ type: ActionTypes.setFactorial, payload });
@@ -51,16 +45,16 @@ export const useFactorial = () => {
 		return p;
 	};
 
-	const calculateFactorial = () => {
+	const calculateFactorial = ({ number }: { number: number }) => {
 		try {
-			const factorial = factorialHandler(state.number);
+			const factorial = factorialHandler(number);
 
-			setFactorial({ factorial });
-			dispatch(factorialUpdateHistory({ number: state.number, factorial }));
+			setFactorial(factorial);
+			dispatch(factorialUpdateHistory({ number, factorial }));
 		} catch (e) {
-			setError({ error: t('errors.fallbackErrorMessage') });
+			setError(t('errors.fallbackErrorMessage'));
 		}
 	};
 
-	return { state, calculateFactorial, setNumber };
+	return { state, calculateFactorial };
 };
