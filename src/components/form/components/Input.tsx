@@ -5,6 +5,8 @@ import { ComponentProps } from 'react';
 import { Label } from 'src/components/form/components/Label';
 
 // STYLES
+import 'src/components/form/components/styles.scss';
+import clsx from 'clsx';
 
 interface InputInterface {
 	autoFocus?: boolean;
@@ -33,6 +35,7 @@ export const Input = ({ label, type, placeholder, autoFocus, disabled, name, con
 					placeholder={placeholder}
 					autoFocus={autoFocus}
 					disabled={disabled}
+					className={clsx('input', { 'input--error': !!error })}
 				/>
 			</Label>
 		)}
