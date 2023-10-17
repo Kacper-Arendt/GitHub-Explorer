@@ -1,0 +1,18 @@
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.error-message {
+	color: $warning;
+	font-size: $fz-small;
+	min-height: 1rem;
+}
+
+.label {
+	@include flex-column;
+	gap: 0.25rem;
+	align-items: start;
+
+	&__text {
+		font-size: $fz-medium;
+	}
+}

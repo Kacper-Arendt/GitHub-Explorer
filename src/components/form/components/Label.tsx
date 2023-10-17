@@ -4,6 +4,7 @@ import { ReactNode } from 'react';
 import { ErrorMessage, ErrorMessageInterface } from 'src/components/form/components/ErrorMessage';
 
 // STYLES
+import 'src/components/form/components/styles.scss';
 
 export interface LabelInterface extends ErrorMessageInterface {
 	label?: string;
@@ -12,9 +13,9 @@ export interface LabelInterface extends ErrorMessageInterface {
 }
 
 export const Label = ({ id, label, children, error }: LabelInterface) => (
-	<label htmlFor={id}>
-		{label && <span>{label}</span>}
+	<label htmlFor={id} className="label">
+		{label && <span className="label__text">{label}</span>}
 		{children}
-		{error && <ErrorMessage error={error} />}
+		<ErrorMessage error={error} />
 	</label>
 );
