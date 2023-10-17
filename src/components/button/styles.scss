@@ -1,0 +1,28 @@
+@use 'sass:color';
+@import 'src/styles/variables';
+@import 'src/styles/mixins';
+
+.button {
+	padding: 0.5rem;
+	border: 1px solid $grey100;
+	color: $grey10;
+	background: $grey90;
+	border-radius: $border2;
+	line-height: 1.5;
+	transition:
+		background-color 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25),
+		transform 0.3s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+
+	&:disabled {
+		cursor: default;
+		filter: blur(1px);
+	}
+
+	&:enabled:hover,
+	&:focus {
+		background: lighten($grey90, 3%);
+	}
+	&:active {
+		transform: scale(0.96);
+	}
+}
