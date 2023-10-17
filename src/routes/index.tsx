@@ -7,6 +7,7 @@ import { NotFound } from 'src/components/errors';
 // ROUTES
 import { UserRepos } from 'src/features/github';
 import { Info } from 'src/features/info';
+import { Factorial } from 'src/features/factorial';
 
 export const routes = {
 	userProjects: {
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
 			{
 				path: routes.info.path,
 				element: <Info />,
+			},
+			{
+				path: routes.factorial.path,
+				element: <Factorial />,
 			},
 		],
 	},
