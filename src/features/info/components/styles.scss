@@ -3,6 +3,7 @@
 
 .project-info {
 	@include flex-column;
+	padding: $main-padding;
 	gap: 1rem;
 
 	&__heading {

@@ -1,0 +1,8 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.project-info {
+	@include flex-column;
+	padding: $main-padding;
+	gap: 1rem;
+}
