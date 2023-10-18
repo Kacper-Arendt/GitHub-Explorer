@@ -17,8 +17,12 @@
 		"pageNotFound-desc": "Sorry, the page you are looking for does not exist."
 	},
 	"routes": {
-		"userProjects": "User Projects",
+		"userProjects": "Projects",
 		"factorial": "Factorial",
 		"info": "Info"
+	},
+	"langs": {
+		"pl": "Polish",
+		"en": "English"
 	}
 }

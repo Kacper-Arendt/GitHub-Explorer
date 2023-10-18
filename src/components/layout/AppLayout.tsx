@@ -7,6 +7,7 @@ import 'src/components/layout/styles.scss';
 // COMPONENTS
 import { HeaderNavigation } from 'src/components/navigation';
 import { FallbackError } from 'src/components/errors';
+import { LanguageSelect } from 'src/components/language';
 
 export const AppLayout = ({ children }: { children: ReactNode }) => {
 	return (
@@ -15,6 +16,7 @@ export const AppLayout = ({ children }: { children: ReactNode }) => {
 				<ErrorBoundary FallbackComponent={FallbackError}>
 					<header className="app-layout__header">
 						<HeaderNavigation />
+						<LanguageSelect />
 					</header>
 				</ErrorBoundary>
 

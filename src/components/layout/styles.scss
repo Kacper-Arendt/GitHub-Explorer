@@ -6,6 +6,9 @@
 	height: 100%;
 
 	&__header {
+		@include flex-center;
+		justify-content: space-between;
+		
 		width: 100%;
 		padding: 1rem 0.5rem;
 		background-color: #555151;

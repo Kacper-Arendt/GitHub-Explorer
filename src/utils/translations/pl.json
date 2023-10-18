@@ -17,8 +17,12 @@
     "pageNotFound-desc": "Przepraszamy, ale szukana strona nie istnieje."
   },
   "routes": {
-    "userProjects": "Projekty użytkowników",
+    "userProjects": "Projekty",
     "factorial": "Silnia",
     "info": "Informacje"
+  },
+  "langs": {
+    "pl": "Polski",
+    "en": "Angielski"
   }
 }
