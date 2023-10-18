@@ -16,6 +16,6 @@ export const Label = ({ id, label, children, error }: LabelInterface) => (
 	<label htmlFor={id} className="label">
 		{label && <span className="label__text">{label}</span>}
 		{children}
-		<ErrorMessage error={error} />
+		{error && <ErrorMessage error={error} />}
 	</label>
 );

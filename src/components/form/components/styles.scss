@@ -5,7 +5,6 @@
 .error-message {
 	color: $warning;
 	font-size: $fz-small;
-	min-height: 1rem;
 }
 
 .label {
@@ -23,6 +22,7 @@
 }
 
 .input {
+	width: 100%;
 	padding: 0.5rem;
 	border: 1px solid $grey100;
 	color: $grey10;
@@ -40,6 +40,7 @@
 	&::placeholder {
 		color: inherit;
 		opacity: 1;
+		font-size: $fz-small;
 	}
 
 	&:focus {

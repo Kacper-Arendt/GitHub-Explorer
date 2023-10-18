@@ -25,4 +25,8 @@
 	&:active {
 		transform: scale(0.96);
 	}
+
+	&--flexible {
+		flex: 1;
+	}
 }

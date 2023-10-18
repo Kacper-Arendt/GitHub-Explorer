@@ -1,0 +1,23 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.factorial-calculator {
+	padding-bottom: 2rem;
+
+	&__form {
+		display: flex;
+		align-items: start;
+		gap: 1rem;
+		padding-bottom: 1rem;
+	}
+
+	&__result {
+		&--strong {
+			color: $primary;
+		}
+	}
+
+	@include media-md {
+		max-width: 20rem;
+	}
+}
