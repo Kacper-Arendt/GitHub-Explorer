@@ -2,7 +2,7 @@
 @import 'src/styles/variables';
 
 .factorial-calculator {
-	padding-bottom: 2rem;
+	padding: $main-padding $main-padding 2rem;
 
 	&__form {
 		display: flex;
@@ -20,4 +20,9 @@
 	@include media-md {
 		max-width: 20rem;
 	}
+}
+
+.factorial-history {
+	overflow: auto;
+	padding: $main-padding;
 }

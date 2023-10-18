@@ -14,7 +14,7 @@ export const factorialSlice = createSlice({
 	initialState,
 	reducers: {
 		factorialUpdateHistory: (state, action: PayloadAction<HistoryInterface>) => {
-			state.history.push(action.payload);
+			state.history.unshift(action.payload);
 		},
 	},
 });

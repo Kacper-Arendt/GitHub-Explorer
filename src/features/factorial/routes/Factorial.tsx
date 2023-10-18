@@ -4,9 +4,14 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { FallbackError } from 'src/components/errors';
 import { Calculator, History } from 'src/features/factorial/components';
 
+// STYLES
+import 'src/features/factorial/routes/styles.scss';
+
 export const Factorial = () => (
 	<ErrorBoundary FallbackComponent={FallbackError}>
-		<Calculator />
-		<History />
+		<div className="factorial">
+			<Calculator />
+			<History />
+		</div>
 	</ErrorBoundary>
 );

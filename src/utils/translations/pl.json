@@ -9,7 +9,9 @@
     "infoScreenDescription": "Aplikacja składa się z trzech głównych ekranów",
     "calculate": "Oblicz",
     "factorialResult": "Wynik silni",
-    "number": "Liczba"
+    "number": "Liczba",
+    "calculationHistory": "Historia obliczeń",
+    "factorialResultInter": "Silnia {{number}} to {{factorial}}"    
   },
   "errors": {
     "fallbackErrorMessage": "Ups! Coś poszło nie tak",
