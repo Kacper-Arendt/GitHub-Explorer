@@ -2,7 +2,7 @@ import { ErrorBoundary } from 'react-error-boundary';
 import { t } from 'i18next';
 
 // HOOKS
-import { useReposList } from 'src/features/github/hooks/useReposList';
+import { useReposListData } from 'src/features/github/context/useReposListContext';
 
 // COMPONENTS
 import { FallbackError } from 'src/components/errors';
@@ -12,7 +12,7 @@ import { Button } from 'src/components/button';
 // STYLES
 
 export const UserReposHeader = () => {
-	const { form, setSearch } = useReposList();
+	const { form, setSearch } = useReposListData();
 
 	return (
 		<ErrorBoundary FallbackComponent={FallbackError}>

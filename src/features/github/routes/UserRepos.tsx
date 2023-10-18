@@ -1,21 +1,19 @@
 import { ErrorBoundary } from 'react-error-boundary';
 
-// REDUX
-
 // HOOKS
-
-// MODELS
+import { ContextProvider } from 'src/features/github/context/useReposListContext';
 
 // COMPONENTS
 import { FallbackError } from 'src/components/errors';
-import { UserReposList } from 'src/features/github/components';
+import { UserReposList, UserReposHeader } from 'src/features/github/components';
 
 // STYLES
 
-// UTILS
-
 export const UserRepos = () => (
 	<ErrorBoundary FallbackComponent={FallbackError}>
-		<UserReposList />
+		<ContextProvider>
+			<UserReposHeader />
+			<UserReposList />
+		</ContextProvider>
 	</ErrorBoundary>
 );
