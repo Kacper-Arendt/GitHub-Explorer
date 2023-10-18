@@ -1,17 +1,21 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 // MODELS
-import { LogInterface } from 'src/redux/slices/debug/models';
+import { InitialStateInterface, LogInterface } from 'src/redux/slices/debug/models';
 import { RootState } from 'src/redux/store';
 
-const initialState = {};
+const initialState: InitialStateInterface = {
+	logs: [],
+};
 
 export const debugSlice = createSlice({
 	name: 'debug',
 	initialState,
 	reducers: {
-		// eslint-disable-next-line @typescript-eslint/no-unused-vars
-		debugSetItem: (state, action: PayloadAction<LogInterface>) => state,
+		debugSetItem: (state, action: PayloadAction<LogInterface>) => {
+			state.logs.unshift(action.payload);
+			if (state.logs.length > 50) state.logs.pop();
+		},
 	},
 });
 
