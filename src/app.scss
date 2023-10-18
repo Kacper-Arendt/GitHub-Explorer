@@ -6,15 +6,9 @@ body {
 	color: $grey10;
 }
 
-html,
-body,
-#root {
-	height: 100%;
-}
-
 ul {
 	li {
-		color: inherit;
+		color: $grey10;
 	}
 	li:nth-child(even) {
 		color: $danger;

@@ -1,13 +1,4 @@
-// REDUX
-
-// HOOKS
-
-// MODELS
-
-// COMPONENTS
-
 // STYLES
+import 'src/components/loaders/styles.scss';
 
-// UTILS
-
-export const Loader = () => <p>loading</p>;
+export const Loader = () => <p className="loader" />;

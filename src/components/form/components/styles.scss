@@ -45,9 +45,6 @@
 
 	&:focus {
 		background: lighten($grey90, 1%);
-	}
-
-	&:focus {
 		transform: scale(1.02);
 	}
 }

@@ -36,6 +36,7 @@ export const Input = ({ label, type, placeholder, autoFocus, disabled, name, con
 					autoFocus={autoFocus}
 					disabled={disabled}
 					className={clsx('input', { 'input--error': !!error })}
+					autoComplete="off"
 				/>
 			</Label>
 		)}
