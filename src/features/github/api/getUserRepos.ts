@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
+import { ExtractFnReturnType, QueryConfig } from 'src/config/react-query';
 
 // API
 import { githubApi } from 'src/features/github/api/axiosInstance';
 
 // MODELS
 import { RepoInterface } from 'src/features/github/models';
-import { ExtractFnReturnType, QueryConfig } from 'src/config/react-query';
+
+// UTILS
+import { logger } from 'src/utils/logger';
 
 interface GetUserReposInterface {
 	username: string;
@@ -23,6 +26,7 @@ export const getUserRepos = async ({
 	try {
 		return await githubApi.get(`users/${username}/repos?sort=${sort}&per_page=${perPage}`, { signal });
 	} catch (e) {
+		logger.error('getUserRepos', e);
 		return null;
 	}
 };

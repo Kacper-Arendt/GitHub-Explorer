@@ -14,6 +14,9 @@ import {
 	SetFactorialType,
 } from 'src/features/factorial/models';
 
+// UTILS
+import { logger } from 'src/utils/logger';
+
 const initialState: ReducerInitialStateInterface = {
 	factorial: null,
 	error: null,
@@ -48,10 +51,12 @@ export const useFactorial = () => {
 	const calculateFactorial = ({ number }: { number: number }) => {
 		try {
 			const factorial = factorialHandler(number);
+			logger.error('calculateFactorial', number);
 
 			setFactorial(factorial);
 			dispatch(factorialUpdateHistory({ number, factorial }));
 		} catch (e) {
+			logger.error('calculateFactorial', e);
 			setError(t('errors.fallbackErrorMessage'));
 		}
 	};

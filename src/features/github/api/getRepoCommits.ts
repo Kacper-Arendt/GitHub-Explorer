@@ -1,11 +1,14 @@
 import { useQuery } from '@tanstack/react-query';
+import { ExtractFnReturnType, QueryConfig } from 'src/config/react-query';
 
 // API
 import { githubApi } from 'src/features/github/api/axiosInstance';
 
 // MODELS
 import { CommitInterface } from 'src/features/github/models';
-import { ExtractFnReturnType, QueryConfig } from 'src/config/react-query';
+
+// UTILS
+import { logger } from 'src/utils/logger';
 
 interface GetRepoCommitsInterface {
 	owner: string;
@@ -23,6 +26,7 @@ export const getRepoCommits = async ({
 	try {
 		return await githubApi.get(`/repos/${owner}/${repo}/commits?per_page=${perPage}`, { signal });
 	} catch (e) {
+		logger.error('getRepoCommits', e);
 		return null;
 	}
 };
