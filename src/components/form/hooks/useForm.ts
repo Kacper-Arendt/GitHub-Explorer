@@ -8,6 +8,7 @@ interface UseFormProps<T extends ZodSchema> extends UseHookFormProps<TypeOf<T>> 
 
 export const useForm = <T extends ZodSchema>({ schema, ...formConfig }: UseFormProps<T>) =>
 	useHookForm({
+		mode: 'onSubmit',
 		...formConfig,
 		resolver: zodResolver(schema),
 	});

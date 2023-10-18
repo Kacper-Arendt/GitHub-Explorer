@@ -21,8 +21,8 @@ export const History = () => {
 			<div className="factorial-history">
 				{history?.length > 0 && (
 					<>
-						<p className="factorial-history__title">{t('general.calculationHistory')}</p>
-						<ul className="factorial-history__list">
+						<p>{t('general.calculationHistory')}</p>
+						<ul>
 							{history.map((entry, index) => (
 								<li key={index}>
 									{i18next.t('general.factorialResultInter', { number: entry.number, factorial: entry.factorial })}

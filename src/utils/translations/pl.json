@@ -11,7 +11,9 @@
     "factorialResult": "Wynik silni",
     "number": "Liczba",
     "calculationHistory": "Historia obliczeń",
-    "factorialResultInter": "Silnia {{number}} to {{factorial}}"    
+    "factorialResultInter": "Silnia {{number}} to {{factorial}}",
+    "search": "Szukaj",
+    "typeUsername": "Wpisz nazwę użytkownika"
   },
   "errors": {
     "fallbackErrorMessage": "Ups! Coś poszło nie tak",

@@ -8,12 +8,15 @@ import { FallbackError } from 'src/components/errors';
 import { UserReposList, UserReposHeader } from 'src/features/github/components';
 
 // STYLES
+import 'src/features/github/routes/styles.scss';
 
 export const UserRepos = () => (
 	<ErrorBoundary FallbackComponent={FallbackError}>
 		<ContextProvider>
-			<UserReposHeader />
-			<UserReposList />
+			<div className="user-repos">
+				<UserReposHeader />
+				<UserReposList />
+			</div>
 		</ContextProvider>
 	</ErrorBoundary>
 );

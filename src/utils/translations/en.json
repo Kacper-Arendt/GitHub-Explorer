@@ -11,7 +11,9 @@
 		"factorialResult": "Factorial result",
 		"number": "Number",
 		"calculationHistory": "Calculation History",
-		"factorialResultInter": "Factorial of {{number}} is {{factorial}}"
+		"factorialResultInter": "Factorial of {{number}} is {{factorial}}",
+		"search": "Search",
+		"typeUsername": "Type username"
 	},
 	"errors": {
 		"fallbackErrorMessage": "Oops! Something went wrong",

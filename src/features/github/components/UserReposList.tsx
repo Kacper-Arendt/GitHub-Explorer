@@ -10,6 +10,7 @@ import { FallbackError } from 'src/components/errors';
 import { StatusWrapper } from 'src/components/wrappers/StatusWrapper';
 
 // STYLES
+import 'src/features/github/components/styles.scss';
 
 export const UserReposList = () => {
 	const { useUserRepoQuery } = useReposListData();
@@ -17,7 +18,7 @@ export const UserReposList = () => {
 
 	return (
 		<ErrorBoundary FallbackComponent={FallbackError}>
-			<div>
+			<div className="user-repos-list">
 				<StatusWrapper isError={isError} isSuccess={isSuccess} isLoading={isInitialLoading}>
 					{isFetched && !data && <p>{t('general.userNotFound')}</p>}
 					{isFetched && data?.length === 0 && <p>{t('general.noUserRepositoriesMessage')}</p>}

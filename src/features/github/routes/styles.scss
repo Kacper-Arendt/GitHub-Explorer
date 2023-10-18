@@ -1,0 +1,8 @@
+@import 'src/styles/mixins';
+@import 'src/styles/variables';
+
+.user-repos {
+	@include flex-column;
+	max-height: 100%;
+	flex: 1;
+}

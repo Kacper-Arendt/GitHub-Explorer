@@ -1,8 +1,22 @@
 @import 'src/styles/mixins';
 @import 'src/styles/variables';
 
-.project-info {
-	@include flex-column;
-	padding: $main-padding;
+.user-repos-header-form {
+	display: flex;
+	align-items: start;
 	gap: 1rem;
+	padding: $main-padding;
+
+	label {
+		flex: 1;
+	}
+
+	@include media-md {
+		max-width: 30rem;
+	}
+}
+
+.user-repos-list {
+	padding: $main-padding;
+	overflow: auto;
 }
