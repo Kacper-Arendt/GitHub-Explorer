@@ -29,9 +29,7 @@ export const content: Record<SupportedLangsType, { title: string; features: stri
 		},
 		{
 			title: 'Dodatkowe Wymagania',
-			features: [
-				'W projekcie wykorzystano middlewary Redux, zapewniając bardziej zaawansowane zarządzanie stanem aplikacji.',
-			],
+			features: ['W projekcie wykorzystano middlewary Redux'],
 		},
 	],
 	en: [
@@ -62,7 +60,7 @@ export const content: Record<SupportedLangsType, { title: string; features: stri
 		},
 		{
 			title: 'Additional Requirements',
-			features: ['The project uses Redux middleware, providing more advanced state management for the application.'],
+			features: ['The project uses Redux middleware'],
 		},
 	],
 };

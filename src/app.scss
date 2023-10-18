@@ -3,6 +3,7 @@
 body {
 	background-color: $main-bg-color;
 	font-family: 'Roboto', sans-serif;
+	color: $grey10;
 }
 
 html,
@@ -13,7 +14,7 @@ body,
 
 ul {
 	li {
-		color: white;
+		color: inherit;
 	}
 	li:nth-child(even) {
 		color: $danger;
