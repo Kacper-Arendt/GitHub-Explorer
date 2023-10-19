@@ -1,27 +1,24 @@
-# React + TypeScript + Vite
+# Project name: GitHub Explorer
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## [App hosted on vercel](https://github-explorer-indol.vercel.app/)
 
-Currently, two official plugins are available:
+## The application consists of three main screens
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### GitHub Project Search
+The application uses the public GitHub API, allowing the user to search for projects on GitHub.
+After entering a user login, the application validates it and handles non-existing logins.
+It displays a maximum of 5 projects, sorting them by the latest update.
+For each project, it displays a maximum of 5 commits.
 
-## Expanding the ESLint configuration
+### Factorial Calculator
+The second screen of the application allows the user to calculate the factorial for a given number.
+The application stores the history of previous calculations.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### General Information
+The application is implemented following the BEM principles.
+Styling is based on LESS/SASS.
+Every other item in each list is highlighted with color.
+The project is hosted on a platform, and its code is publicly available.
 
-- Configure the top-level `parserOptions` property like this:
-
-```js
-   parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-   },
-```
-
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Additional Requirements
+The project uses Redux middleware
